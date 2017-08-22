@@ -186,7 +186,7 @@
     top: 50%;
     left: 50%;
     margin-top: -2px;
-    margin-left: 8px
+    margin-left: 12px
 }
 
 .promo_detailed .am-g .promo_detailed--list .promo_detailed--list_item dl, .promo_detailed .am-g .promo_detailed--list .promo_detailed--list_item dl dt {
@@ -195,8 +195,8 @@
 }
 
 .promo_detailed .am-g .promo_detailed--list .promo_detailed--list_item dl dd {
-    font-size: 16px;
-    line-height: 23px;
+    font-size: 15px;
+    line-height: 22px;
     color: #969696
 }
 
@@ -789,10 +789,11 @@
     position: relative;
     color: #969696;
     margin-top: 5px;
-    font-size: 13px;
+    font-size: 15px;
     font-style: italic
 }
-.about-container .null-item{
+
+.about-container .null-item {
     height: 198px;
 }
 
@@ -801,9 +802,44 @@
     color: #59bcdb;
     margin-left: 8px
 }
-.our-mission .am-u-md-3{
+
+.our-mission .am-u-md-4 {
     margin-top: 30px;
 }
-.text-p{
+
+.text-p {
     margin-top: 0;
+}
+
+.our_mission--item_title {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.about-container .our-company-quote .our-company-img img {
+    width: 100%
+}
+
+.team-block-ul {
+    list-style: none;
+    margin: 10px 0 0;
+    padding-left: 0;
+}
+
+.team-block-ul li {
+    position: relative;
+    color: #969696;
+    margin-top: 5px;
+    font-size: 15px;
+    font-style: italic;
+}
+
+.team-block-ul li:before {
+    content: "\f178";
+    color: #59bcdb;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+.header-box{
+    border-bottom: 1px solid #eee;
 }
