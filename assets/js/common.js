@@ -1,5 +1,5 @@
 /*
-**index customer-logo hover
+ **index customer-logo hover
  */
 
 // $(".coustomer-logo").find(".am-u-md-2 a").each(function() {
@@ -12,14 +12,55 @@
 //     $(this).find(".normal-logo").show();
 //   });
 // });
-(function(){
-  $('.customer-logo').find('.customer-box').each(function(){
-    $(this).hover(function(){
-        $(this).find('.am-active').show();
-        $(this).find('.normal-logo').hide();
-    },function(){
-        $(this).find('.am-active').hide();
-        $(this).find('.normal-logo').show();
+(function () {
+  $('.customer-logo').find('.customer-box').each(function () {
+    $(this).hover(function () {
+      $(this).find('.am-active').show();
+      $(this).find('.normal-logo').hide();
+    }, function () {
+      $(this).find('.am-active').hide();
+      $(this).find('.normal-logo').show();
     })
   });
-})()
+
+  // 邮件
+  $('#dataForm').validator({
+    submit: function (e) {
+      var valid = this.isFormValid();
+      if (valid) {
+        var name = $('#name').val(),
+          email = $('#email').val(),
+          phone = $('#phone').val(),
+          profession = $('#profession').val(),
+          remark = $('#remark').val();
+        var $modal = $('#my-alert');
+        var data = {
+          name: name,
+          email: email,
+          phone: phone,
+          profession: profession,
+          remark: remark
+        };
+        e.preventDefault();
+        $.ajax({
+          url: './assets/js/email.json',
+          type: 'POST',
+          data: data,
+          dataType: 'json',
+          success: function (resultData) {
+            if (resultData.type === 'success') {
+              $('#language') && $('#language').val() === "1" ? $('#resultMsg').text('Success！') : $('#resultMsg').text('提交成功！');
+            } else {
+              $('#language') && $('#language').val() === "1" ? $('#resultMsg').text('Submit Failed！') : $('#resultMsg').text('提交失败！');
+            }
+            $modal.modal();
+          }
+        })
+      } else {
+        e.preventDefault();
+        return false;
+      }
+    }
+  });
+
+})();
