@@ -43,9 +43,10 @@
         };
         e.preventDefault();
         $.ajax({
-          url: './assets/js/email.json',
+          url: 'http://localhost:8080/mail/send',
           type: 'POST',
-          data: data,
+          data: JSON.stringify(data),
+            contentType:'application/json',
           dataType: 'json',
           success: function (resultData) {
             if (resultData.type === 'success') {
