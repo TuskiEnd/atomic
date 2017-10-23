@@ -43,7 +43,7 @@
         };
         e.preventDefault();
         $.ajax({
-          url: 'http://localhost:8080/mail/send',
+          url: 'http://47.52.155.161:8080/mail/send',
           type: 'POST',
           data: JSON.stringify(data),
             contentType:'application/json',
